@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import styles from "./createUserModal.module.css";
+import styles from "./createuserModal.module.css";
 
 const CreateUserModal = ({ closeCreateUserModal, setNote }) => {
     
