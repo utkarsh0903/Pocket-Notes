@@ -1,30 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { dashboardBackground, lock } from "./data/data.jsx";
 
 import "./index.css";
 import styles from "./app.module.css";
 import CreateUserModal from "./components/CreateUserModal.jsx";
+import NoteGroup from "./components/NoteGroup.jsx";
 
 function App() {
-  const [note, setNote] = useState({
+  const [note, setNote] = useState([{
     noteName: "",
     shortForm: "",
-    colour: "",
+    color: "",
     details: "",
     submitDate: "",
     submitTime: "",
-  });
+  }]);
   const [modalOpen, setModalOpen] = useState(false);
 
   const openCreateUserModal = () => setModalOpen(true);
   const closeCreateUserModal = () => setModalOpen(false);
+
+  useEffect(() => {
+    const notes = JSON.parse(localStorage.getItem("note")) || [];
+    setNote(notes);
+  }, []);
 
   return (
     <>
       <div className={styles.dashboard}>
         <div className={styles.notesGroupSection}>
           <h2>Pocket Notes</h2>
+          <NoteGroup note={note} />
           <button
             className={styles.createGroupButton}
             onClick={openCreateUserModal}
@@ -53,7 +60,11 @@ function App() {
         </div>
       </div>
       {modalOpen && (
-        <CreateUserModal closeCreateUserModal={closeCreateUserModal} setNote={setNote} />
+        <CreateUserModal
+          closeCreateUserModal={closeCreateUserModal}
+          note={note}
+          setNote={setNote}
+        />
       )}
     </>
   );

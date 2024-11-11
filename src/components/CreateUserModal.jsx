@@ -2,17 +2,43 @@ import React, { useState } from "react";
 
 import styles from "./createuserModal.module.css";
 
-const CreateUserModal = ({ closeCreateUserModal, setNote }) => {
-    
+const CreateUserModal = ({ closeCreateUserModal, note, setNote }) => {
   const [newGroupName, setNewGroupName] = useState("");
+  const [groupShortName, setGroupShortName] = useState("");
   const [colorSelected, setColorSelected] = useState("");
 
-  const createGroupName = () => {
+  const createGroupName = (e) => {
+    e.preventDefault();
+
+    const newNote = {
+      noteName: newGroupName,
+      shortForm: groupShortName,
+      color: colorSelected,
+      details: "",
+      submitDate: "",
+      submitTime: "",
+    };
+
+    setNote((prevNotes) => [...prevNotes, newNote]);
+    saveNote(note);
     closeCreateUserModal();
   };
 
+  const saveNote = (note) => {
+    localStorage.setItem("note", JSON.stringify(note));
+  }
+
   const handleNameChange = (e) => {
-    setNewGroupName(e.target.value);
+    const groupName = e.target.value;
+    setNewGroupName(groupName);
+
+    const name = groupName.trim().split(" ");
+
+    const shortName =
+      name.length >= 2
+        ? name[0][0].toUpperCase() + name[1][0].toUpperCase()
+        : name[0]?.[0]?.toUpperCase();
+    setGroupShortName(shortName);
   };
 
   const handleSelectedColor = (color) => {
@@ -31,10 +57,11 @@ const CreateUserModal = ({ closeCreateUserModal, setNote }) => {
             <input
               placeholder="Enter group name"
               type="text"
-              name="Name"
+              name="name"
               id="groupName"
               required
               onChange={handleNameChange}
+              value={newGroupName}
             />
           </div>
           <div className={styles.colorYourGroup}>

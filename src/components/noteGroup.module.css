@@ -1,0 +1,15 @@
+.noteGroup{
+  color: black; 
+  background-color: purple; 
+  z-index: 3;
+  .noteShortForm{
+    color: red;
+  }
+  .noteName{
+    color: green;
+  }
+}
+
+.active{
+    background-color: grey;
+}
