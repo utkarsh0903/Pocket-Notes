@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1.2fr 4fr;
+  height: 100vh;
+}
+
+.notesGroupSection {
+  position: relative;
+  h2 {
+    margin-top: 0.8em;
+    text-align: center;
+  }
+}
+
+.createGroupButton {
+  background-color: #16008b;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #ffffff;
+  position: fixed;
+  top: 510px;
+  left: 220px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.notesDetailSection {
+  background-color: #dae5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboardContent {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin: 0;
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+  }
+  p {
+    color: #292929;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 1em;
+  }
+}
+
+.bannerImage {
+  width: 27em;
+  height: 12em;
+}
+
+.dashboardFooter {
+  margin-top: 1.6em;
+  display: flex;
+  p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #292929;
+    margin-left: 0.2em;
+    text-align: center;
+  }
+}
+
+.encryptedLock {
+  width: 13px;
+  height: 17px;
+}
