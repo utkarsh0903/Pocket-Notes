@@ -9,10 +9,18 @@
 
 .notesGroupSection {
   position: relative;
-
-  h2 {
-    margin-top: 0.8em;
-    text-align: center;
+  overflow-y: scroll;
+  .notesHeading {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: 4em;
+    h2 {
+      margin-top: 0.8em;
+      text-align: center;
+    }
   }
 }
 
@@ -31,6 +39,7 @@
   font-style: normal;
   font-size: 45px;
   cursor: pointer;
+  z-index: 5;
 }
 
 .notesDetailSection {
@@ -70,7 +79,7 @@
 .dashboardFooter {
   margin-top: 1.6em;
   display: flex;
-  p{
+  p {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: #292929;

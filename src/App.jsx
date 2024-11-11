@@ -8,14 +8,16 @@ import CreateUserModal from "./components/CreateUserModal.jsx";
 import NoteGroup from "./components/NoteGroup.jsx";
 
 function App() {
-  const [note, setNote] = useState([{
-    noteName: "",
-    shortForm: "",
-    color: "",
-    details: "",
-    submitDate: "",
-    submitTime: "",
-  }]);
+  const [note, setNote] = useState([
+    {
+      noteName: "",
+      shortForm: "",
+      color: "",
+      details: "",
+      submitDate: "",
+      submitTime: "",
+    },
+  ]);
   const [modalOpen, setModalOpen] = useState(false);
 
   const openCreateUserModal = () => setModalOpen(true);
@@ -30,7 +32,9 @@ function App() {
     <>
       <div className={styles.dashboard}>
         <div className={styles.notesGroupSection}>
-          <h2>Pocket Notes</h2>
+          <div className={styles.notesHeading}>
+            <h2>Pocket Notes</h2>
+          </div>
           <NoteGroup note={note} />
           <button
             className={styles.createGroupButton}

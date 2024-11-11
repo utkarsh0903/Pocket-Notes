@@ -1,13 +1,30 @@
-.noteGroup{
-  color: black; 
-  background-color: purple; 
-  z-index: 3;
-  .noteShortForm{
-    color: red;
-  }
-  .noteName{
-    color: green;
-  }
+.groupContainer{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    .noteGroup{
+        height: 5em;
+        display: flex;
+        color: black;
+        .noteShortForm{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1em;
+            margin-top: 0.7em;
+            height: 3em;
+            width: 3em;
+            border-radius: 50%;
+            font-size: 1.2em;
+        }
+        .noteName{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4em;
+        }
+      }
 }
 
 .active{

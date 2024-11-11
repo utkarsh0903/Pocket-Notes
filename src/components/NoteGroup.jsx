@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import "../index.css";
 import styles from "./noteGroup.module.css";
 
-const NoteGroup = ({notes = []}) => {
+const NoteGroup = ({note = []}) => {
   const [activeGroupIndex, setActiveGroupIndex] = useState(null);
 
   const handleGroupClick = (index) => {
     setActiveGroupIndex(index);
   };
   return (
-    <div>
-      {notes.map((note, index) => (
+    <div className={styles.groupContainer}>
+      {note.map((note, index) => (
         <div
           key={index}
           className={`${styles.noteGroup} ${
