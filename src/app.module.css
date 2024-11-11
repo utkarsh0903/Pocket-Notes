@@ -4,10 +4,12 @@
   display: grid;
   grid-template-columns: 1.2fr 4fr;
   height: 100vh;
+  z-index: 1;
 }
 
 .notesGroupSection {
   position: relative;
+
   h2 {
     margin-top: 0.8em;
     text-align: center;
